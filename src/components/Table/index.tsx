@@ -1,4 +1,5 @@
 import { League } from "@/interfaces";
+import Image from "next/image";
 
 interface Props {
   league: League;
@@ -45,9 +46,11 @@ export default function Table({ league }: Props) {
                       {statsMap.get("rank").displayValue}
                     </div>
                     <div className="pr-4 h-logo-column w-logo-column">
-                      <img
+                      <Image
                         src={entry.team.logos[0]?.href}
                         alt={entry.team.displayName}
+                        width={20}
+                        height={20}
                       />
                     </div>
                     <div className="hidden sm:block">

@@ -1,19 +1,33 @@
 import { League } from "@/interfaces";
 import Table from "../components/Table";
 
-async function fetchLeagueByCode(code: string): Promise<League> {
-  const currentSeason = new Date().getFullYear();
+interface LeagueProps {
+  code: string;
+  season: number;
+}
+
+async function fetchLeagueByCode({
+  code,
+  season,
+}: LeagueProps): Promise<League> {
   const res = await fetch(
-    `https://site.web.api.espn.com/apis/v2/sports/soccer/${code}/standings?season=${currentSeason}`,
+    `https://site.web.api.espn.com/apis/v2/sports/soccer/${code}/standings?season=${season}`,
     { next: { revalidate: 5 } }
   );
-
+  
   return res.json();
 }
 
 export default async function DashboardPage() {
-  const leagueCodes = ["eng.1", "esp.1", "ita.1", "ger.1", "fra.1", "bra.1"];
-  const promises = leagueCodes.map((code) => fetchLeagueByCode(code));
+  const leagueCodes = ["eng.1", "esp.1", "ita.1", "ger.1", "fra.1"];
+  const europeanSeason = new Date().getFullYear() - 1;
+  const promises = leagueCodes.map((code) =>
+    fetchLeagueByCode({ code, season: europeanSeason })
+  );
+
+  const brazilSeason = new Date().getFullYear();
+  promises.push(fetchLeagueByCode({ code: "bra.1", season: brazilSeason }));
+
   const res = await Promise.all(promises);
 
   return (

@@ -3,8 +3,8 @@ import { BASE_URL } from "./api/config";
 
 export default async function DashboardPage() {
   const res = await fetch(`${BASE_URL}/api/route`, {
-    method: 'POST'
-  }); 
+    method: "POST",
+  });
   const data = await res.json();
   return (
     <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 h-full xl:h-screen 2xl:h-screen">

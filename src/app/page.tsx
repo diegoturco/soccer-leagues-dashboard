@@ -2,17 +2,19 @@ import Table from "@/components/Table";
 import { headers } from "next/headers";
 import { getBaseUrl } from "./api/config";
 
-export default async function DashboardPage() {
+async function fetchAllLeagues() {
   const url = `${getBaseUrl({ headers })}/api/route`;
-
-  console.log(url);
 
   const res = await fetch(url, {
     method: "POST",
+    next: { revalidate: 5 },
   });
 
-  const data = await res.json();
+  return await res.json();
+}
 
+export default async function DashboardPage() {
+  const data = await fetchAllLeagues();
   return (
     <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 h-full xl:h-screen 2xl:h-screen">
       <Table league={data[0]} />

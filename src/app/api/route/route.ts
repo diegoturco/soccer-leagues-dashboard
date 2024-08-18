@@ -10,12 +10,8 @@ async function fetchLeagueByCode({
   code,
   season,
 }: LeagueProps): Promise<League> {
-  console.log(`SOCCER_BASE_URL: ${process.env.SOCCER_BASE_URL}`);
-
-  const res = await fetch(
-    `${process.env.SOCCER_BASE_URL}/${code}/standings?season=${season}`,
-    { next: { revalidate: 5 } }
-  );
+  const url = `${process.env.SOCCER_BASE_URL}/${code}/standings?season=${season}`;
+  const res = await fetch(url);
   return res.json();
 }
 

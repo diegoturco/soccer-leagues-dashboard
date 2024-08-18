@@ -10,7 +10,7 @@ async function fetchLeagueByCode({
   code,
   season,
 }: LeagueProps): Promise<League> {
-  console.log(process.env.SOCCER_BASE_URL);
+  console.log(`SOCCER_BASE_URL: ${process.env.SOCCER_BASE_URL}`);
 
   const res = await fetch(
     `${process.env.SOCCER_BASE_URL}/${code}/standings?season=${season}`,

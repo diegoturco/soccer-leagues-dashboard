@@ -5,10 +5,7 @@ export default async function DashboardPage() {
   const url = `${BASE_URL}/api/route`;
 
   const res = await fetch(url, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
-    }
+    method: 'POST'
   });
   console.log(await res.text());
   

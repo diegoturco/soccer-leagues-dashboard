@@ -1,5 +1,7 @@
 // import type { League } from "@/interfaces";
 
+import { NextResponse } from "next/server";
+
 // interface LeagueProps {
 //   code: string;
 //   season: number;
@@ -32,11 +34,6 @@
 //   return Response.json(res);
 // }
 
-export async function GET() {
-  const headers = new Headers({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*', // Adjust as necessary
-  });
-
-  return new Response(JSON.stringify({ message: 'hello' }), { headers });
+export async function POST() {
+  return NextResponse.json({ message: 'hello' });
 }

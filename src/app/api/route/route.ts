@@ -19,7 +19,7 @@ async function fetchLeagueByCode({
   return res.json();
 }
 
-export async function POST() {
+export async function GET() {
   // const leagueCodes = ["eng.1", "esp.1", "ita.1", "ger.1", "fra.1"];
   // const europeanSeason = new Date().getFullYear() - 1;
   // const promises = leagueCodes.map((code) =>

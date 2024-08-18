@@ -22,7 +22,7 @@ export default async function DashboardPage() {
       <Table league={data[3]} />
       <Table league={data[4]} />
       <Table league={data[5]} /> */}
-      {res1}
+      {JSON.stringify(res1)}
     </div>
   );
 }

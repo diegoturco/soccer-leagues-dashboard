@@ -1,5 +1,4 @@
 // import type { League } from "@/interfaces";
-import { NextResponse } from "next/server";
 
 // interface LeagueProps {
 //   code: string;
@@ -30,5 +29,5 @@ export async function GET() {
   // promises.push(fetchLeagueByCode({ code: "bra.1", season: brazilSeason }));
 
   // const res = await Promise.all(promises);
-  return NextResponse.json({ message: 'hello' });
+  return Response.json({ message: 'hello' });
 }

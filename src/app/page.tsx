@@ -1,10 +1,8 @@
-import { headers } from "next/headers";
 import Table from "../components/Table";
 import { BASE_URL } from "./api/config";
 
 export default async function DashboardPage() {
   const res = await fetch(`${BASE_URL}/api/route`, {
-    headers: headers(),
     method: 'POST'
   }); 
   const data = await res.json();

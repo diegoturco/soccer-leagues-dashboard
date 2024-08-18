@@ -1,23 +1,23 @@
-import type { League } from "@/interfaces";
+// import type { League } from "@/interfaces";
 import { NextResponse } from "next/server";
 
-interface LeagueProps {
-  code: string;
-  season: number;
-}
+// interface LeagueProps {
+//   code: string;
+//   season: number;
+// }
 
-async function fetchLeagueByCode({
-  code,
-  season,
-}: LeagueProps): Promise<League> {
-  console.log(`SOCCER_BASE_URL: ${process.env.SOCCER_BASE_URL}`);
+// async function fetchLeagueByCode({
+//   code,
+//   season,
+// }: LeagueProps): Promise<League> {
+//   console.log(`SOCCER_BASE_URL: ${process.env.SOCCER_BASE_URL}`);
 
-  const res = await fetch(
-    `${process.env.SOCCER_BASE_URL}/${code}/standings?season=${season}`,
-    { next: { revalidate: 5 } }
-  );
-  return res.json();
-}
+//   const res = await fetch(
+//     `${process.env.SOCCER_BASE_URL}/${code}/standings?season=${season}`,
+//     { next: { revalidate: 5 } }
+//   );
+//   return res.json();
+// }
 
 export async function GET() {
   // const leagueCodes = ["eng.1", "esp.1", "ita.1", "ger.1", "fra.1"];

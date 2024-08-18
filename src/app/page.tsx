@@ -1,7 +1,7 @@
-import { BASE_URL } from "./api/config";
+// import { BASE_URL } from "./api/config";
 
 export default async function DashboardPage() {
-  console.log(`BASE_URL: ${BASE_URL}`);
+  // console.log(`BASE_URL: ${BASE_URL}`);
   // const url = `${BASE_URL}/api/route`;
 
   // const res = await fetch(url);

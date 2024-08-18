@@ -33,9 +33,10 @@
 // }
 
 export async function GET() {
-  return new Response(JSON.stringify({ message: 'hello' }), {
-    headers: {
-      'Content-Type': 'application/json',
-    },
+  const headers = new Headers({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*', // Adjust as necessary
   });
+
+  return new Response(JSON.stringify({ message: 'hello' }), { headers });
 }

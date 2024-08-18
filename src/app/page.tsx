@@ -2,6 +2,8 @@ import Table from "../components/Table";
 import { BASE_URL } from "./api/config";
 
 export default async function DashboardPage() {
+  console.log(`BASE_URL: ${BASE_URL}`);
+
   const res = await fetch(`${BASE_URL}/api/route`, {
     method: "POST",
   });

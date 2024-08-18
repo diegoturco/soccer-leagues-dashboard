@@ -3,8 +3,9 @@ import { BASE_URL } from "./api/config";
 
 export default async function DashboardPage() {
   console.log(`BASE_URL: ${BASE_URL}`);
+  const url = `${BASE_URL}/api/route`;
 
-  const res = await fetch(`${BASE_URL}/api/route`, {
+  const res = await fetch(url, {
     method: "POST",
   });
   const data = await res.json();

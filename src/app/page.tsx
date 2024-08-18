@@ -5,7 +5,8 @@ export default async function DashboardPage() {
   const url = `${BASE_URL}/api/route`;
 
   const res = await fetch(url);
-  const data = await res.json();
+  const text = await res.text();
+  const data = JSON.parse(text);
   console.log(data);
   
   return (

@@ -4,7 +4,7 @@ export default async function DashboardPage() {
   console.log(`BASE_URL: ${BASE_URL}`);
   const url = `${BASE_URL}/api/route`;
 
-  const res = await fetch(url);
+  // const res = await fetch(url);
   // const data = await res.json();
   return (
     <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 h-full xl:h-screen 2xl:h-screen">

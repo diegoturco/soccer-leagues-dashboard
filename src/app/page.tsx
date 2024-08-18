@@ -11,7 +11,8 @@ export default async function DashboardPage() {
   const res = await fetch(url, {
     method: 'POST'
   });
-  console.log(await res.json());
+  
+  const res1 = await res.json();
   
   return (
     <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 h-full xl:h-screen 2xl:h-screen">
@@ -21,6 +22,7 @@ export default async function DashboardPage() {
       <Table league={data[3]} />
       <Table league={data[4]} />
       <Table league={data[5]} /> */}
+      {res1}
     </div>
   );
 }

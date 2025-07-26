@@ -10,10 +10,10 @@ module.exports = {
       daisyui: {
         themes: ["light", "dark"],
       },
-      width: {
-        'table-column': '300px',
-        'rank-column': '25px',
-        'logo-column': '35px',
+      spacing: {
+        '300': '300px',
+        '35': '35px',        
+        '25': '25px',
       },
     },
   },

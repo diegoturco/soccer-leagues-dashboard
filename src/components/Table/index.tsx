@@ -15,10 +15,10 @@ export default function Table({ league }: Props) {
       <table className="table table-xs sm:table-sm md:table-md lg:table-lg table-pin-rows table-pin-cols">
         <thead>
           <tr className="text-center">
-            <th className="hidden sm:block sm:w-table-column text-left">
+            <th className="hidden sm:block sm:w-300 text-left">
               {league.name}
             </th>
-            <th className="sm:hidden sm:w-table-column text-left">
+            <th className="sm:hidden sm:w-300 text-left">
               {league.abbreviation}
             </th>
             <td>P</td>
@@ -42,10 +42,10 @@ export default function Table({ league }: Props) {
               <tr key={entry.team.id} className="text-center whitespace-nowrap">
                 <th className="sm:w-table-column text-left">
                   <div className="flex">
-                    <div className="w-rank-column pr-7">
+                    <div className="w-25 pr-7">
                       {statsMap.get("rank").displayValue}
                     </div>
-                    <div className="pr-4 h-logo-column w-logo-column">
+                    <div className="pr-4 w-35">
                       <Image
                         src={entry.team.logos[0]?.href}
                         alt={entry.team.displayName}
